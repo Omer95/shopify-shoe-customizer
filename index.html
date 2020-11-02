@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chair Tutorial</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="options">
+        <!-- <div class="option --is-active" data-option="shoes">
+            <img src="legs.svg" alt=""/>
+        </div> -->
+        <div class="option" data-option="shoes_0">
+            <img src="images/cushions.svg" alt=""/>
+        </div>
+        <div class="option" data-option="shoes_1">
+            <img src="images/base.svg" alt=""/>
+        </div>
+        <div class="option" data-option="shoes_2">
+            <img src="images/supports.svg" alt=""/>
+        </div>
+        <div class="option" data-option="shoes_3">
+            <img src="images/back.svg" alt=""/>
+        </div>
+    </div>
+
+    <canvas id="c"></canvas>
+    <div class="controls">
+        <div id="js-tray" class="tray">
+            <div id="js-tray-slide" class="tray__slide"></div>
+        </div>
+    </div>
+    <div class="checkout">
+        <button onclick="checkout()">Buy</button>
+    </div>
+
+      <!-- The main three.js file -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+
+    <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/OBJLoader.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/DRACOLoader.js'></script>
+
+    <!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
+    <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+
+    <script src="customizer.js"></script>
+
+</body>
+</html>
