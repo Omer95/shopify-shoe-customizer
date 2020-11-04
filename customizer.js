@@ -26,7 +26,8 @@ let activeOption = '';
 const cameraFar = 20;
 const BACKGROUND_COLOR = 0xf1f1f1;
 let theModel;
-const MODEL_PATH = "http://127.0.0.1:8080/models/anim-shoe-2.glb";
+// const MODEL_PATH = "http://localhost:8080/models/anim-shoe-2.glb";
+const MODEL_PATH = "./models/anim-shoe-2.glb";
 
 // init the scene
 const scene = new THREE.Scene();
@@ -238,7 +239,7 @@ const setMaterial = (parent, type, mtl) => {
 }
 // button event listener
 checkout = () => {
-    fetch('http://127.0.0.1:8000/test', { body: JSON.stringify(shoeOptions), method: 'POST', headers: {
+    fetch('http://ec2-18-132-9-128.eu-west-2.compute.amazonaws.com:8000/test', { body: JSON.stringify(shoeOptions), method: 'POST', headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }})

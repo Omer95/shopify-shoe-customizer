@@ -15,7 +15,7 @@ PORT = 8000
 
 const client = Client.buildClient({
     domain: 'marenello.myshopify.com',
-    storefrontAccessToken: '6834c83442f0e36c70897f016e5b7db4'
+    storefrontAccessToken: process.env.shopifyToken
 }, fetch)
 let ckid;
 app.post('/test', (req, res) => {
@@ -61,7 +61,11 @@ app.post('/test', (req, res) => {
     
 })
 
+app.get('/', (req, res) => {
+    res.json({response: 'success'})
+})
 
-app.listen(PORT, '127.0.0.1', () => {
+
+app.listen(PORT, () => {
     console.log(`app is running on localhost:${PORT}`)
 })
